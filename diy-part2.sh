@@ -24,6 +24,9 @@ sed -i 's/zh_cn/auto/g' feeds/luci/modules/luci-base/root/etc/uci-defaults/luci-
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
+# 安装前置 mosdns
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 # 获取MosDNSluci-app-mosdns
 rm -rf feeds/packages/net/mosdns
 rm -rf package/feeds/packages/mosdns
